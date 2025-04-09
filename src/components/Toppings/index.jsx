@@ -1,0 +1,54 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+const Toppings = () => {
+  const [data,setData] = useState([])
+  const [basket, setBasket] = useState([])
+  useEffect(() => {
+    axios
+    .get("http://localhost:3001/toppings")
+    .then((res)  => setData(res.data))
+  },[] )
+
+const handleChange = (item) => {
+//element sepette var mı
+const found = basket.find((i) => i.id === item.id )
+//varsa kaldır yoksa ekle
+found
+   ? setBasket(basket.filter((i) => i.id!== item.id ))
+   : setBasket([...basket, item])
+}
+return (
+    <div>
+      <h1>Sos Çeşitler</h1>
+      <p>Tanesi <span className='text-success'></span>$
+      </p>
+
+      <h3>
+        Soslar Ücreti{" "} <span data-testid="total" className='text-success'>{basket.length *3} </span>$
+      </h3>
+
+      <div className='row p-3 mt-4 gap-3'>
+        {data.map((i)  => {
+          const found = basket.find((item)  =>item.id ===i.id )
+          return (
+
+            <div 
+              data-testid="card"
+              onClick={() => handleChange(i) }
+              className={`top-card col ${found ? 'active' : ''}`}
+             key={i.id}
+             >
+            <div>
+            <img src={i.imagePath} height={100} />
+            <p>{i.name}</p>
+            </div>
+          </div>
+        );
+       })}
+      </div>
+    </div>
+  )
+}
+
+export default Toppings
