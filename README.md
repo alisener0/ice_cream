@@ -1,2 +1,24 @@
-# ice_cream
-Bu projede, **axios** (HTTP istekleri için), **bootstrap** (tasarım ve stil için), **react-dom** (React bileşenlerini tarayıcıda render etmek için), **json-server** (sahte API oluşturmak için), **react-redux** (durum yönetimi için) ve **@testing-library/user-event@14.0** (kullanıcı etkileşimlerini test etmek için) gibi kütüphaneler kullanılmıştır.
+**Ice Cream** is a modern, responsive landing page for an ice cream shop or product. Designed with a fresh and vibrant UI, it showcases flavors, promotions, and key features to attract customers and deliver a sweet user experience.
+
+
+
+
+🚀 Features
+
+🎨 Visually appealing, colorful design
+
+📱 Fully responsive layout for mobile and desktop
+
+🧭 Smooth scrolling and clean navigation
+
+💬 Sections for features, testimonials, and contact
+
+🛠️ Technologies Used
+
+HTML5
+CSS3 
+JavaScript
+Responsive Design
+
+
+
